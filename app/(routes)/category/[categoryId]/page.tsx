@@ -12,7 +12,7 @@ interface CategoryPageProps {
 
 const CategoryPage: React.FC<CategoryPageProps> = async ({params}) => {
     const { categoryId } = await params;
-    const products = await getProducts({categoryId: params.categoryId});
+    const products = await getProducts({categoryId: categoryId});
     const category = await getCategory(categoryId);
     return ( 
         <div className="bg-white">
