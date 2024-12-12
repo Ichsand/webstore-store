@@ -6,12 +6,17 @@ import NoResults from "@/components/ui/no-results";
 import ProductCard from "@/components/ui/product-card";
 import React from "react";
 
-type Params = Promise<{ categoryId: string }>
+interface CategoryPageProps {
+    params: {
+        categoryId: string;
+    }
+}
+// type Params = Promise<{ categoryId: string }>
 
-const CategoryPage= async (props: { params: Params }) => {
-    const { categoryId } = await props.params;
-    const products = await getProducts({categoryId: categoryId});
-    const category = await getCategory(categoryId);
+const CategoryPage: React.FC<CategoryPageProps> = async ({ params }) => {
+    // const { categoryId } = await props.params;
+    const products = await getProducts({categoryId: params.categoryId});
+    const category = await getCategory(params.categoryId);
     return ( 
         <div className="bg-white">
             <Container>

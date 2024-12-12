@@ -8,8 +8,8 @@ import ModalProvider from "@/providers/modal-provider";
 const font = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Online Store",
-  description: "Online Store",
+  title: "sAN'DStore - Most Flexible Online Shopping Platform",
+  description: "sAN'DStore",
 };
 
 export default function RootLayout({
